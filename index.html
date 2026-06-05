@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Gear | Estética Automotiva Premium</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        iron: {
+                            black: '#0a0a0a',
+                            dark: '#121212',
+                            gray: '#242424',
+                            orange: '#FF5722',
+                            light: '#B0B0B0'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Bebas Neue"', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF5722; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e64a19; 
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .gallery-img {
+            transition: all 0.4s ease;
+            filter: grayscale(80%);
+        }
+        
+        .gallery-item:hover .gallery-img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-iron-black text-white font-body antialiased selection:bg-iron-orange selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-iron-black/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <i data-lucide="settings" class="text-iron-orange h-8 w-8 animate-[spin_10s_linear_infinite]"></i>
+                    <span class="font-heading text-3xl tracking-wider mt-1">IRON GEAR</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#standards" class="text-iron-light hover:text-white transition-colors uppercase text-sm font-semibold tracking-widest">Padrão Iron</a>
+                    <a href="#builds" class="text-iron-light hover:text-white transition-colors uppercase text-sm font-semibold tracking-widest">Projetos</a>
+                    <a href="#manifesto" class="text-iron-light hover:text-white transition-colors uppercase text-sm font-semibold tracking-widest">Manifesto</a>
+                    <a href="#contact" class="bg-iron-orange hover:bg-orange-600 text-white px-6 py-2 rounded-sm font-semibold transition-colors uppercase tracking-widest text-sm">
+                        Agendar
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-iron-light hover:text-white">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center justify-center relative pt-20">
+        <div class="text-center px-4 max-w-4xl mx-auto z-10">
+            <div class="inline-block mb-4 px-3 py-1 border border-iron-orange/50 text-iron-orange text-xs font-bold tracking-[0.2em] uppercase rounded-sm bg-iron-orange/10 backdrop-blur-sm">
+                Heritage Meets Horsepower
+            </div>
+            <h1 class="font-heading text-6xl md:text-8xl tracking-wide mb-6 leading-none">
+                REFINE A <span class="text-transparent bg-clip-text bg-gradient-to-r from-iron-orange to-orange-400">FORÇA.</span><br>
+                PRESERVE A HERANÇA.
+            </h1>
+            <p class="text-iron-light text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                Estética automotiva de alta performance e detalhamento premium para quem não aceita o comum. Construído com alma técnica.
+            </p>
+            <a href="#contact" class="inline-flex items-center gap-2 bg-iron-orange hover:bg-orange-600 text-white px-8 py-4 rounded-sm font-bold transition-all hover:scale-105 uppercase tracking-widest">
+                Iniciar meu Projeto
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+            <span class="text-iron-light text-xs tracking-[0.2em] uppercase mb-2">Deslize</span>
+            <i data-lucide="chevron-down" class="text-iron-orange w-6 h-6"></i>
+        </div>
+    </section>
+
+    <!-- The Iron Standards -->
+    <section id="standards" class="py-24 bg-iron-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl tracking-widest mb-4">Padrão <span class="text-iron-orange">Iron</span></h2>
+                <div class="h-1 w-20 bg-iron-orange mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-iron-black p-8 border border-white/5 hover:border-iron-orange/50 transition-colors group">
+                    <div class="w-14 h-14 bg-iron-gray flex items-center justify-center rounded-sm mb-6 group-hover:bg-iron-orange transition-colors">
+                        <i data-lucide="microscope" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl tracking-wider mb-3">Engenharia Estética</h3>
+                    <p class="text-iron-light leading-relaxed text-sm">
+                        Não apenas limpamos, analisamos a superfície de cada veículo. Processos de correção de pintura com precisão microscópica.
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-iron-black p-8 border border-white/5 hover:border-iron-orange/50 transition-colors group">
+                    <div class="w-14 h-14 bg-iron-gray flex items-center justify-center rounded-sm mb-6 group-hover:bg-iron-orange transition-colors">
+                        <i data-lucide="shield" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl tracking-wider mb-3">Proteção de Elite</h3>
+                    <p class="text-iron-light leading-relaxed text-sm">
+                        Vitrificação, selantes sintéticos e PPF (Paint Protection Film) com a mais alta tecnologia disponível no mercado global.
+                    </p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-iron-black p-8 border border-white/5 hover:border-iron-orange/50 transition-colors group">
+                    <div class="w-14 h-14 bg-iron-gray flex items-center justify-center rounded-sm mb-6 group-hover:bg-iron-orange transition-colors">
+                        <i data-lucide="history" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl tracking-wider mb-3">Heritage Care</h3>
+                    <p class="text-iron-light leading-relaxed text-sm">
+                        Especialistas em restauro estético de clássicos. Preservamos a pátina do tempo enquanto devolvemos o brilho original.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / The Build -->
+    <section id="builds" class="py-24 bg-iron-black">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="font-heading text-4xl md:text-5xl tracking-widest mb-4">Galeria <span class="text-iron-orange">The Build</span></h2>
+                    <div class="h-1 w-20 bg-iron-orange"></div>
+                </div>
+                <a href="#" class="hidden md:flex items-center text-iron-light hover:text-iron-orange transition-colors text-sm font-bold tracking-widest uppercase gap-2">
+                    Ver Instagram <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Img 1 -->
+                <div class="gallery-item relative overflow-hidden aspect-square group cursor-pointer border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=800" alt="Projeto 1" class="gallery-img object-cover w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-iron-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-iron-orange text-xs font-bold tracking-widest uppercase mb-1">Full Detail</span>
+                        <h4 class="font-heading text-2xl tracking-wider">Classic Porsche 911</h4>
+                    </div>
+                </div>
+                <!-- Img 2 -->
+                <div class="gallery-item relative overflow-hidden aspect-square group cursor-pointer border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&q=80&w=800" alt="Projeto 2" class="gallery-img object-cover w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-iron-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-iron-orange text-xs font-bold tracking-widest uppercase mb-1">Engine Bay</span>
+                        <h4 class="font-heading text-2xl tracking-wider">V8 Restoration</h4>
+                    </div>
+                </div>
+                <!-- Img 3 -->
+                <div class="gallery-item relative overflow-hidden aspect-square group cursor-pointer border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&q=80&w=800" alt="Projeto 3" class="gallery-img object-cover w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-iron-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-iron-orange text-xs font-bold tracking-widest uppercase mb-1">Ceramic Coating</span>
+                        <h4 class="font-heading text-2xl tracking-wider">BBS Wheels</h4>
+                    </div>
+                </div>
+                <!-- Img 4 -->
+                <div class="gallery-item relative overflow-hidden aspect-square group cursor-pointer border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800" alt="Projeto 4" class="gallery-img object-cover w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-iron-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-iron-orange text-xs font-bold tracking-widest uppercase mb-1">Paint Correction</span>
+                        <h4 class="font-heading text-2xl tracking-wider">Corvette C7</h4>
+                    </div>
+                </div>
+                <!-- Img 5 -->
+                <div class="gallery-item relative overflow-hidden aspect-square group cursor-pointer border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=800" alt="Projeto 5" class="gallery-img object-cover w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-iron-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-iron-orange text-xs font-bold tracking-widest uppercase mb-1">Interior Detail</span>
+                        <h4 class="font-heading text-2xl tracking-wider">Leather Treatment</h4>
+                    </div>
+                </div>
+                <!-- Img 6 -->
+                <div class="gallery-item relative overflow-hidden aspect-square group cursor-pointer border border-white/5">
+                    <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&q=80&w=800" alt="Projeto 6" class="gallery-img object-cover w-full h-full">
+                    <div class="absolute inset-0 bg-gradient-to-t from-iron-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-iron-orange text-xs font-bold tracking-widest uppercase mb-1">Washing Process</span>
+                        <h4 class="font-heading text-2xl tracking-wider">Snow Foam</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="#" class="inline-flex items-center text-iron-orange hover:text-white transition-colors text-sm font-bold tracking-widest uppercase gap-2">
+                    Ver mais no Instagram <i data-lucide="instagram" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section id="manifesto" class="py-32 bg-iron-gray relative overflow-hidden border-y border-white/10">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-iron-orange to-transparent opacity-50"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <i data-lucide="quote" class="w-16 h-16 text-iron-orange/20 mx-auto mb-8"></i>
+            <p class="font-heading text-3xl md:text-5xl tracking-wide leading-tight mb-8">
+                "Para nós, metal não é apenas material.<br> É história em movimento. Na <span class="text-iron-orange">Iron Gear</span>, cada detalhe é forjado com a precisão que sua máquina merece."
+            </p>
+            <div class="flex items-center justify-center gap-4 text-iron-light">
+                <div class="w-12 h-[1px] bg-iron-light/30"></div>
+                <span class="uppercase tracking-[0.2em] text-xs font-bold">A Filosofia da Garagem</span>
+                <div class="w-12 h-[1px] bg-iron-light/30"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & CTA -->
+    <section id="contact" class="py-24 bg-iron-dark">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-heading text-5xl md:text-6xl tracking-widest mb-6">Pronto para a <span class="text-iron-orange">Transformação?</span></h2>
+            <p class="text-iron-light mb-10 max-w-xl mx-auto">
+                Agende uma avaliação técnica presencial. Tratamos poucos carros por vez para garantir a excelência.
+            </p>
+            
+            <a href="#" class="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-8 py-4 rounded-sm font-bold transition-all hover:-translate-y-1 w-full sm:w-auto shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+                <i data-lucide="message-circle" class="w-6 h-6"></i>
+                Falar com a Oficina no WhatsApp
+            </a>
+            
+            <div class="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-white/10 pt-16 text-left">
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-white text-sm mb-4 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-iron-orange"></i> Localização
+                    </h4>
+                    <p class="text-iron-light text-sm">Jacareí, São Paulo<br>Atendimento com hora marcada.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-white text-sm mb-4 flex items-center gap-2">
+                        <i data-lucide="clock" class="w-4 h-4 text-iron-orange"></i> Horário
+                    </h4>
+                    <p class="text-iron-light text-sm">Seg - Sex: 09h às 18h<br>Sáb: Só entregas de projeto.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase tracking-widest text-white text-sm mb-4 flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4 text-iron-orange"></i> Contato
+                    </h4>
+                    <p class="text-iron-light text-sm">contato@irongear.com.br<br>@irongear.area</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Portfolio Credit -->
+    <footer class="bg-iron-black py-8 border-t border-white/5 text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-iron-light text-xs tracking-wider uppercase">
+                &copy; 2026 Iron Gear Custom. Todos os direitos reservados.
+            </p>
+            <div class="flex items-center gap-2 text-iron-light text-xs tracking-wider uppercase bg-white/5 px-4 py-2 rounded-sm border border-white/10">
+                <i data-lucide="code" class="w-3 h-3 text-iron-orange"></i>
+                Design & Strategy by <strong class="text-white">Equipe Mavion: Matheus, Bryan e Isaque</strong>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Init Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
